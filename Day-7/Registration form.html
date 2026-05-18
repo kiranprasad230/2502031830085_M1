@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+<script>
+function validate()
+{
+    var form1 = document.getElementById("RegForm");
+    var name = form1.Name.value;
+    var email = form1.EMail.value;
+    var phone = form1.Telephone.value;
+    var course = form1.Subject.value;
+    var password = form1.Password.value;
+
+    var regEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    var regPhone = /^\d{10}$/;
+
+    if(name == "")
+    {
+        alert("Please Enter Your Name");
+        return false;
+    }
+
+    else if(email == "" || !regEmail.test(email))
+    {
+        alert("Please Enter Valid Email");
+        return false;
+    }
+
+    else if(password == "")
+    {
+        alert("Please Enter Password");
+        return false;
+    }
+
+    else if(password.length < 6)
+    {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    else if(phone == "" || !regPhone.test(phone))
+    {
+        alert("Please Enter Valid Mobile Number");
+        return false;
+    }
+
+    else if(course == "")
+    {
+        alert("Please Select Course");
+        return false;
+    }
+
+    else
+    {
+        alert("Form Submitted Successfully");
+        return true;
+    }
+}
+</script>
+<form name="RegForm" id="RegForm" onsubmit="return validate()">
+<table border="1" cellpadding="10">
+<tr>
+    <td colspan="2">
+        <h1 align="center">REGISTRATION FORM</h1>
+    </td>
+</tr>
+<tr>
+    <td>Name :</td>
+    <td>
+        <input type="text" name="Name" size="40">
+    </td>
+</tr>
+<tr>
+    <td>Email :</td>
+    <td>
+        <input type="text" name="EMail" size="40">
+    </td>
+</tr>
+<tr>
+    <td>Password :</td>
+    <td>
+        <input type="password" name="Password" size="40">
+    </td>
+</tr>
+<tr>
+    <td>Mobile :</td>
+    <td>
+        <input type="text" name="Telephone" size="40">
+    </td>
+</tr>
+<tr>
+    <td>Select Course :</td>
+    <td>
+        <select name="Subject">
+            <option value="">--Select Course--</option>
+            <option>B.Tech</option>
+            <option>M.Tech</option>
+            <option>BCA</option>
+            <option>MCA</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>Comments :</td>
+    <td>
+        <textarea cols="40" name="Comment"></textarea>
+    </td>
+</tr>
+<tr>
+    <td></td>
+    <td>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </td>
+</tr>
+</table>
+</form>
+</body>
+</html>

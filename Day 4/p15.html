@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill Calculation</title>
+</head>
+<body>
+
+<h2>Electricity Bill Calculation</h2>
+
+<script>
+
+let units = 2000;
+let bill;
+
+if(units <= 100)
+{
+    bill = units * 2;
+}
+else if(units <= 200)
+{
+    bill = (100 * 2) + ((units - 100) * 3);
+}
+else
+{
+    bill = (100 * 2) + (100 * 3) + ((units - 200) * 5);
+}
+
+document.write("Total Electricity Bill = ₹" + bill);
+
+</script>
+
+</body>
+</html>
