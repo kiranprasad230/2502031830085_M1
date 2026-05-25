@@ -22,18 +22,40 @@
 // export default App
 
 
-import Hello from "./Hello"
-import Bye from "./Bye"
+// import Hello from "./Hello"
+// import Bye from "./Bye"
 
 
 
-function App() {
+// function App() {
 
-  return (
-    <>
-      <Hello/>
-      <Bye />
+//   return (
+//     <>
+//       <Hello/>
+//       <Bye />
       
+//     </>
+//   )
+// }
+// export default App
+
+import Hello from "./Hello"
+import Button from "./Button"
+function App(){
+  const hobbies =["reading","coding","travelling"]
+
+  function Message(){
+    alert("Hello from message box")
+  }
+  function ByeMessage(){
+    alert("Hello from Byemessage box")
+  }
+  return(
+    <>
+    <Hello name="Kiran" age={20} city="Ahmedabad" hobbies={hobbies}/>
+    <Button label="Click me" handleClick={Message} />
+    <Button label="Just Click" handleClick={ByeMessage} />
+
     </>
   )
 }
